@@ -1,0 +1,122 @@
+dijkstra.cpp: In function ‘double* Graph_predict_source_weights_dijkstra(Graph*, int)’:
+dijkstra.cpp:39:38: error: base operand of ‘->’ has non-pointer type ‘Neighbors’
+       for (int j = 0; j < s_neighbors->degree; j ++) {
+                                      ^~
+dijkstra.cpp:40:27: error: no match for ‘operator[]’ (operand types are ‘Neighbors’ and ‘int’)
+  to_check.push(s_neighbors[j].q);
+                           ^
+dijkstra.cpp:41:18: error: no match for ‘operator[]’ (operand types are ‘Neighbors’ and ‘int’)
+  pred[s_neighbors[j].q] = s_neighbors[j].weight;
+                  ^
+dijkstra.cpp:41:38: error: no match for ‘operator[]’ (operand types are ‘Neighbors’ and ‘int’)
+  pred[s_neighbors[j].q] = s_neighbors[j].weight;
+                                      ^
+dijkstra.cpp:50:46: error: conversion from ‘__gnu_cxx::__alloc_traits<std::allocator<int> >::value_type {aka int}’ to non-scalar type ‘N_Info’ requested
+     N_Info curr              = to_check.front();
+                                ~~~~~~~~~~~~~~^~
+dijkstra.cpp:52:49: error: base operand of ‘->’ has non-pointer type ‘N_Info’
+     Neighbors curr_neighbors = g->neighbors[curr->q];
+                                                 ^~
+dijkstra.cpp:61:7: error: ‘infos’ was not declared in this scope
+       infos[n_curr.q] = n_weight * c_weight / (n_weight + c_weight);
+       ^~~~~
+dijkstra.cpp:61:7: note: suggested alternative: ‘sincos’
+       infos[n_curr.q] = n_weight * c_weight / (n_weight + c_weight);
+       ^~~~~
+       sincos
+dijkstra.cpp:62:27: error: no matching function for call to ‘std::queue<int>::push(N_Info&)’
+       to_check.push(n_curr);
+                           ^
+In file included from /usr/include/c++/7/queue:64:0,
+                 from dijkstra.cpp:4:
+/usr/include/c++/7/bits/stl_queue.h:251:7: note: candidate: void std::queue<_Tp, _Sequence>::push(const value_type&) [with _Tp = int; _Sequence = std::deque<int, std::allocator<int> >; std::queue<_Tp, _Sequence>::value_type = int]
+       push(const value_type& __x)
+       ^~~~
+/usr/include/c++/7/bits/stl_queue.h:251:7: note:   no known conversion for argument 1 from ‘N_Info’ to ‘const value_type& {aka const int&}’
+/usr/include/c++/7/bits/stl_queue.h:256:7: note: candidate: void std::queue<_Tp, _Sequence>::push(std::queue<_Tp, _Sequence>::value_type&&) [with _Tp = int; _Sequence = std::deque<int, std::allocator<int> >; std::queue<_Tp, _Sequence>::value_type = int]
+       push(value_type&& __x)
+       ^~~~
+/usr/include/c++/7/bits/stl_queue.h:256:7: note:   no known conversion for argument 1 from ‘N_Info’ to ‘std::queue<int>::value_type&& {aka int&&}’
+dijkstra.cpp: In function ‘Graph* Graph_init(double**, int)’:
+dijkstra.cpp:81:50: error: no matching function for call to ‘N_Info::N_Info()’
+     g->neighbors[i].neighbors = new N_Info[degree];
+                                                  ^
+dijkstra.cpp:10:3: note: candidate: N_Info::N_Info(int, double)
+   N_Info(int q, double weight) {
+   ^~~~~~
+dijkstra.cpp:10:3: note:   candidate expects 2 arguments, 0 provided
+dijkstra.cpp:7:8: note: candidate: constexpr N_Info::N_Info(const N_Info&)
+ struct N_Info {
+        ^~~~~~
+dijkstra.cpp:7:8: note:   candidate expects 1 argument, 0 provided
+dijkstra.cpp:7:8: note: candidate: constexpr N_Info::N_Info(N_Info&&)
+dijkstra.cpp:7:8: note:   candidate expects 1 argument, 0 provided
+dijkstra.cpp: In function ‘int* vertex_pos(Edge*, int, int, int&)’:
+dijkstra.cpp:142:37: error: no matching function for call to ‘Entry::Entry()’
+   Entry * entry = new Entry[no_nodes];
+                                     ^
+dijkstra.cpp:105:3: note: candidate: Entry::Entry(int, int)
+   Entry(int key, int value) {
+   ^~~~~
+dijkstra.cpp:105:3: note:   candidate expects 2 arguments, 0 provided
+dijkstra.cpp:103:8: note: candidate: constexpr Entry::Entry(const Entry&)
+ struct Entry {
+        ^~~~~
+dijkstra.cpp:103:8: note:   candidate expects 1 argument, 0 provided
+dijkstra.cpp:103:8: note: candidate: constexpr Entry::Entry(Entry&&)
+dijkstra.cpp:103:8: note:   candidate expects 1 argument, 0 provided
+dijkstra.cpp: In function ‘std::vector<std::pair<int, std::vector<std::pair<int, Edge*> >*>*>* rearrange_edges(Edge*, int, int)’:
+dijkstra.cpp:172:66: error: too few arguments to function ‘int* vertex_pos(Edge*, int, int, int&)’
+   int * positions = vertex_pos(edges, no_edges, no_nodes_in_edges);
+                                                                  ^
+dijkstra.cpp:141:7: note: declared here
+ int * vertex_pos(Edge * edges, int no_nodes, int no_edges, int& no_nodes_in_edges) {
+       ^~~~~~~~~~
+dijkstra.cpp:187:41: error: ‘make_pair’ was not declared in this scope
+     (*edge_map)[pos]->second->push_back(make_pair(i, edges + i));
+                                         ^~~~~~~~~
+dijkstra.cpp:187:41: note: suggested alternative:
+In file included from /usr/include/c++/7/bits/stl_algobase.h:64:0,
+                 from /usr/include/c++/7/bits/char_traits.h:39,
+                 from /usr/include/c++/7/ios:40,
+                 from /usr/include/c++/7/ostream:38,
+                 from /usr/include/c++/7/iostream:39,
+                 from dijkstra.cpp:2:
+/usr/include/c++/7/bits/stl_pair.h:524:5: note:   ‘std::make_pair’
+     make_pair(_T1&& __x, _T2&& __y)
+     ^~~~~~~~~
+dijkstra.cpp: In function ‘Edge* convert_to_Edge(int**, int)’:
+dijkstra.cpp:194:35: error: no matching function for call to ‘Edge::Edge()’
+   Edge * edges = new Edge[no_edges];
+                                   ^
+dijkstra.cpp:120:3: note: candidate: Edge::Edge(int, int, double)
+   Edge(int p, int q, double wt) {
+   ^~~~
+dijkstra.cpp:120:3: note:   candidate expects 3 arguments, 0 provided
+dijkstra.cpp:115:3: note: candidate: Edge::Edge(int, int)
+   Edge(int p, int q) {
+   ^~~~
+dijkstra.cpp:115:3: note:   candidate expects 2 arguments, 0 provided
+dijkstra.cpp:112:8: note: candidate: constexpr Edge::Edge(const Edge&)
+ struct Edge {
+        ^~~~
+dijkstra.cpp:112:8: note:   candidate expects 1 argument, 0 provided
+dijkstra.cpp:112:8: note: candidate: constexpr Edge::Edge(Edge&&)
+dijkstra.cpp:112:8: note:   candidate expects 1 argument, 0 provided
+dijkstra.cpp: In function ‘int main()’:
+dijkstra.cpp:224:16: error: declaration of ‘adj’ as multidimensional array must have bounds for all dimensions except the first
+   double adj[][]  = {
+                ^
+dijkstra.cpp:231:18: error: declaration of ‘edges’ as multidimensional array must have bounds for all dimensions except the first
+   double edges[][] = {
+                  ^
+dijkstra.cpp:237:16: error: ‘adj’ was not declared in this scope
+   predict_edge(adj, edges, 5, 3, pred_edges);
+                ^~~
+dijkstra.cpp:237:21: error: ‘edges’ was not declared in this scope
+   predict_edge(adj, edges, 5, 3, pred_edges);
+                     ^~~~~
+dijkstra.cpp:237:21: note: suggested alternative: ‘Edge’
+   predict_edge(adj, edges, 5, 3, pred_edges);
+                     ^~~~~
+                     Edge

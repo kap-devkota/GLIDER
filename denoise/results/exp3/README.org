@@ -1,0 +1,22 @@
+#+LATEX_HEADER: \usepackage{minted}
+#+LATEX_HEADER: \usepackage[margin=1in]{geometry}
+
+* Setup
+This experiment tests the effectiveness of the Djikstra reweighting
+scheme. It uses the same edge adding scheme (
+
+Performance was evaluated using 5-fold CV with the GO label set from
+2019 where all GO labels annotating less than 50 or greater than 1000
+proteins are discared (I use Lily's code to do this).
+
+* Results
+
+|         | Normalized DSD | Glide CW | Glide L3 | Network Enhancement | No denoising |
+|---------+----------------+----------+----------+---------------------+--------------|
+| Dream 1 |          0.246 |    0.247 |    0.246 |               0.239 |        0.246 |
+| Dream 2 |          0.170 |    0.182 |    0.170 |               0.145 |        0.171 |
+| Dream 3 |          0.154 |    0.166 |    0.153 |               0.180 |        0.144 |
+| Dream 4 |          0.139 |    0.142 |    0.143 |               0.120 |        0.141 |
+| Dream 5 |          0.088 |    0.089 |    0.086 |               0.078 |        0.088 |
+| Dream 6 |            N/A |      N/A |      N/A |               0.202 |        0.193 |
+| Average |                |          |          |               0.161 |              |

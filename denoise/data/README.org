@@ -1,0 +1,23 @@
+* DREAM data
+Data for the DREAM disease module identification challenge is located 
+under the dream_files/ directory.
+
+** DREAM Networks
+The files labeled dream_N.txt in this folder are the 6 deanonymized
+networks from the DREAM disease module identification challenge. Each
+row in the file represents one edge in the network. The format for a
+row is GENE1 GENE2 CONFIDENCE. That is, it can be viewed as an
+edgelist.
+
+** GO Labels
+The file labeled human.golabels is a map from GO labels to proteins.
+Each row of the file is of the form GO_LABEL P1 ... PN and represents
+one entry in the map.
+
+The GO labels are pulled from the most recent (as of Friday, April
+24, 2020) version of the human GO annotations and GO ontology. They
+are constructed from all three branches of the GO ontology (Molecular,
+Cellular, Biological) where annotations at the root are removed
+because they are too general. GO annotations are further pruned if
+they annotate less than 100 or more than 1000 proteins.
+
