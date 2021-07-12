@@ -1,0 +1,7 @@
+name: bcb
+dependencies:
+	- numpy
+	- pandas
+	- networkx
+	- scikit-learn
+	- scipy
