@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='denoise',
+    name='gfunc',
     version='1',
     description='Denoising graphs using diffusion state distance link prediction',
     author='Henri Schmidt and Kapil Devkota',
