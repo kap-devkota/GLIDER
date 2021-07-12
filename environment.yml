@@ -1,8 +1,21 @@
 name: bcb
+
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+
 dependencies:
-	- python=3.6
-	- numpy
-	- pandas
-	- networkx
-	- scikit-learn
-	- scipy
+  - pip=20.0
+  - cudatoolkit=10.2
+  - python=3.7
+  - pytorch=1.5
+  - h5py
+  - matplotlib
+  - numpy
+  - pandas
+  - scikit-learn
+  - scipy
+  - seaborn
+  - setuptools
+  - tqdm
