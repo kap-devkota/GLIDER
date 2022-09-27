@@ -60,7 +60,11 @@ def parse_args():
     return parser.parse_args()
 
 
-def main(args):
+def main():
+    args = parser.parse_args()
+    print(args)
+    return
+    
     def log(msg):
         """
         If verbose, print

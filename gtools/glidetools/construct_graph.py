@@ -1,4 +1,4 @@
-import algorithm.glide as glide 
+import glidetools.algorithm.glide as glide 
 import pandas as pd
 import networkx as nx
 import numpy as np
@@ -54,7 +54,7 @@ def get_glide_neighbors(network, k = 10, **kwargs):
     if ("output_type" in kwargs) and (kwargs["output_type"] == "graph"):
         edgelist = []
         for i in range(n):
-            for j in range(k):
+            for j in G1[i]:
                 edgelist.append((rnmap[i], rnmap[j], G[i, j]))
         Gnet = nx.Graph()
         Gnet.add_weighted_edges_from(edgelist)

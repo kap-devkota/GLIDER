@@ -1,5 +1,5 @@
-import dsd
-import local as lc
+import glidetools.algorithm.dsd as dsd
+import glidetools.algorithm.local as lc
 from scipy.spatial.distance import pdist, squareform
 import numpy as np
 

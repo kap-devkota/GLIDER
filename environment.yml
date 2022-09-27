@@ -1,4 +1,4 @@
-name: bcb
+name: glide
 
 channels:
   - pytorch
