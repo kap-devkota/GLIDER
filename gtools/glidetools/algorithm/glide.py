@@ -30,8 +30,8 @@ def glide(A,
     ----------------------------
     You can also provide your own local and global functions for GLIDE
     
-    local: a function that takes in adjacency matrix and returns the local pairwise score
-    global: a function that takes in adjacency matrix and returns the global pairwise score
+    localf: a function that takes in adjacency matrix and returns the local pairwise score
+    globalf: a function that takes in adjacency matrix and returns the global pairwise score
     
     G_emb: if the global embedding is precomputed, returns that embedding. Note: It is an embedding, NOT a distance 
     L_sc: If the local scores are precomputed, returns that score
@@ -57,12 +57,12 @@ def glide(A,
             L = kwargs["L_sc"]
     
     # If the local and/or global functions are provided
-    elif ("local" in kwargs) or ("global" in kwargs):
-        if "local" in kwargs:
-            local = kwargs["local"]
+    elif ("localf" in kwargs) or ("globalf" in kwargs):
+        if "localf" in kwargs:
+            local = kwargs["localf"]
             L = local(A, **kwargs)
-        if "global" in kwargs:
-            global_ = kwargs["global"]
+        if "globalf" in kwargs:
+            global_ = kwargs["globalf"]
             Ge = global_(A, **kwargs)
     
     if L == None:
