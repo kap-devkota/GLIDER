@@ -75,4 +75,4 @@ def compute_dsd_reduced_embedding(A, dims = 50):
     
     X_lr  = X_ls[:, l_ids] / d1_2
     
-    return np.real(X_lr) * l_r.reshape(1, -1)
+    return np.real(X_lr) * np.real(l_r).reshape(1, -1)

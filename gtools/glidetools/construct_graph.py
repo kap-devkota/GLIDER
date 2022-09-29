@@ -18,7 +18,6 @@ def get_glide_neighbors(network, k = 10, **kwargs):
             kwargs represents the additional parameters for glide
     """
     assert (isinstance(network, np.ndarray)) or (isinstance(network, pd.DataFrame))
-    
     if isinstance(network, pd.DataFrame):
         assert (len(network.columns) >= 2) and (len(network.columns) <= 3)
         if len(network.columns) == 2:
@@ -40,8 +39,13 @@ def get_glide_neighbors(network, k = 10, **kwargs):
         A    = network
         n, _ = A.shape
         nodes = range(n)
-        nmap  = {i:i for i in range(n)}
-        rnmap = nmap
+        if "annotate" in kwargs and kwargs["annotate"] is not None: 
+            nmap  = kwargs["annotate"]
+            nodes = list(nmap.keys())
+            rnmap = {i:k for k, i in nmap.items()}
+        else:
+            nmap  = {i:i for i in range(n)}
+            rnmap = nmap
     
     # Get the GLIDE matrix
     G = glide.glide(A, **kwargs)
@@ -67,7 +71,9 @@ def get_glide_neighbors(network, k = 10, **kwargs):
 
     # Return the pandas dataframe
     if ("output_type" in kwargs) and (kwargs["output_type"] == "dataframe"):
-        return pd.DataFrame(neighbors).T
+        ret = pd.DataFrame(neighbors).T.reset_index()
+        ret.columns = ["Node", *[f"Neighbor-{i}" for i in range(k)]]
+        return ret
     
     return neighbors
 
