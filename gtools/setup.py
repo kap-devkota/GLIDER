@@ -4,7 +4,7 @@ this_directory = Path(__file__).parent
 long_description = (this_directory /"../README.md").read_text()
 setup(
     name='glidetools',
-    version='0.0.4',
+    version='0.0.4-1',
     description='DSD, GLIDE and GLIDER tools',
     author='Kapil Devkota',
     license_files = {'LICENSE.txt',},

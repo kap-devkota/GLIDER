@@ -1,5 +1,17 @@
 # GLIDETOOLS: A python based package for computing Diffusion State Distance and GLIDE
 
+## Licensing
+
+This code is copyrighted under the MIT License. 
+
+## Publications
+
+**GLIDE:** Devkota, Kapil, James M. Murphy, and Lenore J. Cowen. "GLIDE: combining local methods and diffusion state embeddings to predict missing interactions in biological networks." Bioinformatics 36.Supplement_1 (2020): i464-i473.
+
+**GLIDER:** Devkota, K., Schmidt, H., Werenski, M., Murphy, J.M., Erden, M., Arsenescu, V. and Cowen, L.J., 2022. GLIDER: Function Prediction from GLIDE-based Neigborhoods. Bioinformatics.
+
+**DSD:** Cao, Mengfei, et al. "New directions for diffusion-based network prediction of protein function: incorporating pathways with confidence." Bioinformatics 30.12 (2014): i219-i227. 
+
 ## Dependencies
 
 This package requires the following dependencies:
